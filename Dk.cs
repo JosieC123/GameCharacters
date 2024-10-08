@@ -1,8 +1,8 @@
 public class Dk : Character{
-    public string Spieces;
+    public string Species;
 
     public override string Display()
     {
-        return $"Id: {Id}\nName: {Name}\nDescription: {Description}\nSpi";
+        return $"Id: {Id}\nName: {Name}\nDescription: {Description}\nSpecies: {Species}\n";
     }
 }
