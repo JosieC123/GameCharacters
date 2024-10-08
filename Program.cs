@@ -22,7 +22,7 @@ do
     // input selection
     string? choice = Console.ReadLine();
     logger.Info("User choice: {Choice}", choice);
-    
+
     if (choice == "1")
     {
 
@@ -42,11 +42,26 @@ do
         {
             Id = marios.Count == 0 ? 1 : marios.Max(c => c.Id) + 1
         };
+
         // Input Name, Description
         Console.WriteLine("Enter Name:");
         mario.Name = Console.ReadLine();
         Console.WriteLine("Enter Description:");
         mario.Description = Console.ReadLine();
+
+        // Input Alias
+        List<string> list = [];
+        do
+        {
+            Console.WriteLine($"Enter Alias or (enter) to quit:");
+            string response = Console.ReadLine()!;
+            if (string.IsNullOrEmpty(response))
+            {
+                break;
+            }
+            list.Add(response);
+        } while (true);
+        mario.Alias = list;
 
     }
     else if (choice == "3")
