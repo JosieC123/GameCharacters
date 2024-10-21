@@ -14,9 +14,17 @@ List<Mario> marios = [];
 // check if file exists
 if (File.Exists(marioFileName))
 {
-  marios = JsonSerializer.Deserialize<List<Mario>>(File.ReadAllText(marioFileName))!;
-  logger.Info($"File deserialized {marioFileName}");
+    marios = JsonSerializer.Deserialize<List<Mario>>(File.ReadAllText(marioFileName))!;
+    logger.Info($"File deserialized {marioFileName}");
 }
+
+// deserialize dk json from file into List<Dk>
+string dkFileName = "dk.json";
+List<Dk> dks = [];
+
+// deserialize sf2 json from file into List<Sf2>
+string sf2FileName = "sf2.json";
+List<Sf2> sf2s = [];
 
 do
 {
@@ -77,6 +85,14 @@ do
         {
             logger.Error("Invalid Id");
         }
+    }
+    else if (string.IsNullOrEmpty(choice))
+    {
+        break;
+    }
+    else
+    {
+        logger.Info("Invalid choice");
     }
 } while (true);
 
