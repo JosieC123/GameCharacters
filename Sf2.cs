@@ -1,7 +1,7 @@
 public class Sf2 : Character{
-    public List<string> SpecialMoves { get; set; } = [];
+    public List<string> Moves { get; set; } = [];
     public override string Display()
     {
-        return  $"Id: {Id}\nName: {Name}\nDescription: {Description}\nSpecial Moves: {string.Join(", ", SpecialMoves)}\n";
+        return  $"Id: {Id}\nName: {Name}\nDescription: {Description}\nMoves: {string.Join(", ", Moves)}\n";
     }
 }
